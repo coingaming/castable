@@ -1,6 +1,33 @@
 # Castable
 
-**TODO: Add description**
+Protocol to aid casting unknown values to known value.
+
+Example:
+
+  ```elixir
+  defimpl Castable, for: MyStruct do
+    def cast(_, %{"foo" => foo}) do
+      %MyStruct{foo: foo}
+    end
+
+    def cast(_, foo) when is_bitstring(foo) do
+      %MyStruct{foo: foo}
+    end
+
+    def cast(_, _) do
+      :error
+    end
+  end
+
+  iex> Castable.cast(%MyStruct{}, %{"foo" => "bar"})
+  %MyStruct{foo: "bar"}
+
+  iex> Castable.cast(%MyStruct{}, "bar")
+  %MyStruct{foo: "bar"}
+
+  iex> Castable.cast(%MyStruct{}, 123)
+  :error
+  ```
 
 ## Installation
 
