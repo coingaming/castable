@@ -6,7 +6,7 @@ Example:
 
   ```elixir
   defimpl Castable, for: MyStruct do
-    def cast(_, %{"foo" => foo}) do
+    def cast(_, %{"foo" => foo}) when is_bitstring(foo) do
       %MyStruct{foo: foo}
     end
 
