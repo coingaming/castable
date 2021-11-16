@@ -6,15 +6,15 @@ Example:
 
   ```elixir
   defimpl Castable, for: MyStruct do
-    def cast(_, %{"foo" => foo}) when is_bitstring(foo) do
+    def cast(_to, %{"foo" => foo}, _opts) when is_bitstring(foo) do
       %MyStruct{foo: foo}
     end
 
-    def cast(_, foo) when is_bitstring(foo) do
+    def cast(_to, foo, _opts) when is_bitstring(foo) do
       %MyStruct{foo: foo}
     end
 
-    def cast(_, _) do
+    def cast(_to, _from, _opts) do
       :error
     end
   end
