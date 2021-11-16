@@ -8,6 +8,7 @@ defmodule Castable.MixProject do
       elixir: "~> 1.12",
       start_permanent: Mix.env() == :prod,
       deps: deps(),
+      docs: docs(),
       description: "Protocol to aid casting unknown values to known value",
       package: [
         licenses: ["MIT"],
@@ -20,6 +21,15 @@ defmodule Castable.MixProject do
   def application do
     [
       extra_applications: [:logger]
+    ]
+  end
+
+  defp docs do
+    [
+      main: "readme",
+      extras: ["README.md"],
+      source_ref: "v0.1.0",
+      source_url: "https://github.com/coingaming/castable"
     ]
   end
 
