@@ -4,7 +4,7 @@ defmodule Castable.MixProject do
   def project do
     [
       app: :castable,
-      version: "0.1.0",
+      version: "0.1.1",
       elixir: "~> 1.12",
       start_permanent: Mix.env() == :prod,
       deps: deps(),
@@ -28,7 +28,7 @@ defmodule Castable.MixProject do
     [
       main: "readme",
       extras: ["README.md"],
-      source_ref: "v0.1.0",
+      source_ref: "v0.1.1",
       source_url: "https://github.com/coingaming/castable"
     ]
   end
