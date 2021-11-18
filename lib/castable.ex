@@ -1,4 +1,4 @@
 defprotocol Castable do
-  @spec cast(t, map() | String.t, term()) :: t
+  @spec cast(t, term(), term()) :: t
   def cast(to, from, opts \\ nil)
 end
