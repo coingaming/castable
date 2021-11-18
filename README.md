@@ -37,7 +37,7 @@ by adding `castable` to your list of dependencies in `mix.exs`:
 ```elixir
 def deps do
   [
-    {:castable, "~> 0.1.0"}
+    {:castable, "~> 0.1.1"}
   ]
 end
 ```
